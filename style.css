@@ -1,40 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+/* Navbar Flotante */
+.navbar-flotante {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: 40px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.navbar-flotante a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.navbar-flotante a.active, .navbar-flotante a:hover {
+    background-color: #e8ecef;
+}
+
+.navbar-flotante a.btn-destacado {
+    background-color: #007ae6;
+    color: white;
+}
+
+/* Sección Hero con Video de Fondo */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#video-fondo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* Tarjeta Central Destacada */
+.tarjeta-hero {
+    width: 65%;
+    max-width: 900px;
+    height: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    background-color: #1a1a1a;
+}
+
+/* Sección de Presentación al Bajar */
+.seccion-presentacion {
+    padding: 100px 20px;
     text-align: center;
-}
-
-header {
-    padding: 50px 20px;
-    background-color: #1e1e1e;
-}
-
-section {
-    padding: 40px 20px;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.grid-proyectos {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.tarjeta {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 8px;
-    width: 250px;
-}
-
-footer {
-    padding: 20px;
-    background-color: #1e1e1e;
-    color: #888;
+.seccion-presentacion h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }

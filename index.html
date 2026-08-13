@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>Portafolio - Editor de Video</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Hola, soy [Tu Nombre]</h1>
-        <p>Editor de Video & Creador de Contenido</p>
-    </header>
+    <!-- Menú flotante estilo cápsula -->
+    <nav class="navbar-flotante">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#trabajos">Mis trabajos</a>
+        <a href="#contacto" class="btn-destacado">Contacto</a>
+    </nav>
 
-    <section class="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Especialista en edición de video, postproducción y creación de contenido visual dinámico.</p>
-    </section>
+    <!-- Sección de Inicio (Video Fullscreen) -->
+    <section id="inicio" class="hero-section">
+        <!-- Reemplaza 'tu-video.mp4' con la ruta de tu video o usa una etiqueta de Vimeo/YouTube -->
+        <video autoplay muted loop id="video-fondo">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-sunset-26070-large.mp4" type="video/mp4">
+        </video>
 
-    <section class="proyectos">
-        <h2>Mis Proyectos</h2>
-        <div class="grid-proyectos">
-            <div class="tarjeta">
-                <h3>Proyecto 1</h3>
-                <p>Descripción corta de tu video o trabajo visual.</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Proyecto 2</h3>
-                <p>Descripción corta de tu video o trabajo visual.</p>
-            </div>
+        <!-- Tarjeta destacada en el centro -->
+        <div class="tarjeta-hero">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
-    <footer>
-        <p>Contacto: tuemail@correo.com</p>
-    </footer>
+    <!-- Sección de Presentación (al hacer scroll hacia abajo) -->
+    <section id="presentacion" class="seccion-presentacion">
+        <h2>Hola, soy [Tu Nombre]</h2>
+        <p>Editor de video especializado en contenido dinámico, postproducción y efectos visuales.</p>
+    </section>
 
 </body>
 </html>
