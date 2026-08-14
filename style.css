@@ -47,41 +47,43 @@ body {
     color: white;
 }
 
-/* SECCIÓN 1: HERO SECTION */
+/* SECCIÓN 1: HERO (VIDEO PRESENTACIÓN) */
 .hero-section {
-    position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    background: radial-gradient(circle, #2a2a2a 0%, #0d0d0d 100%);
+    padding: 100px 4% 60px 4%; /* Espacio para que la navbar no tape el video */
 }
 
-#video-fondo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 1;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    filter: brightness(0.5);
+.contenedor-video-hero {
+    width: 90%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9; /* Proporción panorámica clásica */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tarjeta-hero {
-    position: relative;
-    z-index: 2;
-    width: 65%;
-    max-width: 900px;
-    height: 480px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    background-color: #1a1a1a;
+#video-presentacion {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que llene todo el marco sin deformarse */
+    display: block;
+}
+
+/* Ajuste para pantallas más pequeñas / tablets */
+@media (max-width: 768px) {
+    .contenedor-video-hero {
+        width: 96%;
+        border-radius: 12px;
+    }
 }
 
 /* SECCIÓN 2: PRESENTACIÓN (FONDO BLANCO) */
@@ -179,4 +181,141 @@ body {
         width: 90%;
         height: 300px;
     }
+}/* SECCIÓN 3: MIS TRABAJOS */
+.seccion-trabajos {
+    background-color: #ffffff;
+    padding: 60px 8% 120px 8%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-trabajos {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.titulo-seccion {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #0d0d0d;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* Grilla de 3 columnas */
+.grid-trabajos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Tarjeta individual */
+.tarjeta-trabajo {
+    background-color: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-trabajo:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del video en proporción vertical 9:16 */
+.contenedor-video-vertical {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background-color: #000000;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor-video-vertical video,
+.contenedor-video-vertical iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Textos informativos de cada trabajo */
+.info-trabajo {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.categoria-trabajo {
+    color: #007ae6;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.info-trabajo h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.info-trabajo p {
+    font-size: 0.9rem;
+    color: #666666;
+    line-height: 1.45;
+    margin-bottom: 14px;
+    flex-grow: 1;
+}
+
+.meta-trabajo {
+    font-size: 0.8rem;
+    color: #999999;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 992px) {
+    .grid-trabajos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-trabajos {
+        grid-template-columns: 1fr;
+    }
+    .titulo-seccion {
+        font-size: 2.2rem;
+    }
+}/* 1. Desplazamiento suave para toda la página */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Evita que la barra tape el título al llegar a la sección */
+}
+
+/* 2. Micro-animación al hacer clic en los enlaces de la barra flotante */
+.navbar-flotante a:active {
+    transform: scale(0.92); /* Pequeño efecto de pulsación/presión al hacer clic */
+    transition: transform 0.1s ease;
+}
+
+/* 3. Transición suave al pasar el mouse por encima */
+.navbar-flotante a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.25s ease, transform 0.15s ease, color 0.25s ease;
 }
