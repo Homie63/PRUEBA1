@@ -11,28 +11,52 @@
     <!-- Menú flotante estilo cápsula -->
     <nav class="navbar-flotante">
         <a href="#inicio" class="active">Inicio</a>
-        <a href="#clientes">Clientes</a>
+        <a href="#sobre-mi">Sobre mí</a>
         <a href="#trabajos">Mis trabajos</a>
         <a href="#contacto" class="btn-destacado">Contacto</a>
     </nav>
 
-    <!-- Sección de Inicio (Video Fullscreen) -->
+    <!-- SECCIÓN 1: INICIO (Pantalla Completa) -->
     <section id="inicio" class="hero-section">
-        <!-- Reemplaza 'tu-video.mp4' con la ruta de tu video o usa una etiqueta de Vimeo/YouTube -->
+        <!-- Video de Fondo -->
         <video autoplay muted loop id="video-fondo">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-sky-in-a-sunset-26070-large.mp4" type="video/mp4">
         </video>
 
-        <!-- Tarjeta destacada en el centro -->
+        <!-- Tarjeta Central Destacada -->
         <div class="tarjeta-hero">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
         </div>
     </section>
 
-    <!-- Sección de Presentación (al hacer scroll hacia abajo) -->
-    <section id="presentacion" class="seccion-presentacion">
-        <h2>Hola, soy [Tu Nombre]</h2>
-        <p>Editor de video especializado en contenido dinámico, postproducción y efectos visuales.</p>
+    <!-- SECCIÓN 2: PRESENTACIÓN (Al bajar con scroll) -->
+    <section id="sobre-mi" class="seccion-presentacion">
+        <div class="contenedor-presentacion">
+            <div class="info-presentacion">
+                <span class="subtitulo-categoria">EDICIÓN DE VIDEO · POSTPRODUCCIÓN · CONTENT CREATION</span>
+                <h2 class="titulo-presentacion">Visuales pensados para retener atención.</h2>
+                <p class="texto-presentacion">
+                    Soy Josemiguel, editor de video y creador de contenido visual especializado en edición dinámica, 
+                    ritmo, narrativa visual y optimización para plataformas digitales. Mi enfoque combina creatividad y 
+                    estrategia para desarrollar piezas audiovisuales de alto impacto.
+                </p>
+                
+                <!-- Tags de Habilidades -->
+                <div class="tags-habilidades">
+                    <span>Edición de Video</span>
+                    <span>Motion Graphics</span>
+                    <span>Postproducción</span>
+                    <span>Cortes Dinámicos</span>
+                    <span>Miniaturas</span>
+                    <span>Contenido Digital</span>
+                </div>
+            </div>
+
+            <!-- Foto de perfil circular -->
+            <div class="foto-presentacion">
+                <img src="tu-foto.jpg" alt="Foto de perfil">
+            </div>
+        </div>
     </section>
 
 </body>
