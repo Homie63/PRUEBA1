@@ -35,7 +35,12 @@ body {
     font-weight: 600;
     padding: 8px 16px;
     border-radius: 20px;
-    transition: 0.3s;
+    transition: background-color 0.25s ease, transform 0.15s ease, color 0.25s ease;
+}
+
+.navbar-flotante a:active {
+    transform: scale(0.92);
+    transition: transform 0.1s ease;
 }
 
 .navbar-flotante a.active, .navbar-flotante a:hover {
@@ -55,13 +60,13 @@ body {
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle, #2a2a2a 0%, #0d0d0d 100%);
-    padding: 100px 4% 60px 4%; /* Espacio para que la navbar no tape el video */
+    padding: 100px 4% 60px 4%;
 }
 
 .contenedor-video-hero {
     width: 90%;
     max-width: 1280px;
-    aspect-ratio: 16 / 9; /* Proporción panorámica clásica */
+    aspect-ratio: 16 / 9;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
@@ -74,11 +79,10 @@ body {
 #video-presentacion {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que llene todo el marco sin deformarse */
+    object-fit: cover;
     display: block;
 }
 
-/* Ajuste para pantallas más pequeñas / tablets */
 @media (max-width: 768px) {
     .contenedor-video-hero {
         width: 96%;
@@ -150,10 +154,6 @@ body {
     font-weight: 600;
 }
 
-.foto-presentacion {
-    flex-shrink: 0;
-}
-
 .foto-presentacion img {
     width: 320px;
     height: 320px;
@@ -162,26 +162,7 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-    .contenedor-presentacion {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    .info-presentacion {
-        text-align: center;
-    }
-    .titulo-presentacion {
-        font-size: 2.2rem;
-    }
-    .tags-habilidades {
-        justify-content: center;
-    }
-    .tarjeta-hero {
-        width: 90%;
-        height: 300px;
-    }
-}/* SECCIÓN 3: MIS TRABAJOS */
+/* SECCIÓN 3: MIS TRABAJOS */
 .seccion-trabajos {
     background-color: #ffffff;
     padding: 60px 8% 120px 8%;
@@ -202,14 +183,12 @@ body {
     text-align: left;
 }
 
-/* Grilla de 3 columnas */
 .grid-trabajos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* Tarjeta individual */
 .tarjeta-trabajo {
     background-color: #ffffff;
     border: 1px solid #eef0f3;
@@ -226,7 +205,6 @@ body {
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor del video en proporción vertical 9:16 */
 .contenedor-video-vertical {
     width: 100%;
     aspect-ratio: 9 / 16;
@@ -243,7 +221,6 @@ body {
     display: block;
 }
 
-/* Textos informativos de cada trabajo */
 .info-trabajo {
     padding: 20px;
     text-align: left;
@@ -283,10 +260,32 @@ body {
     padding-top: 12px;
 }
 
-/* Ajustes Responsive */
+/* Desplazamiento Suave General */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Responsivo General */
 @media (max-width: 992px) {
     .grid-trabajos {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .contenedor-presentacion {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .info-presentacion {
+        text-align: center;
+    }
+    .titulo-presentacion {
+        font-size: 2.2rem;
+    }
+    .tags-habilidades {
+        justify-content: center;
     }
 }
 
@@ -297,25 +296,4 @@ body {
     .titulo-seccion {
         font-size: 2.2rem;
     }
-}/* 1. Desplazamiento suave para toda la página */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Evita que la barra tape el título al llegar a la sección */
-}
-
-/* 2. Micro-animación al hacer clic en los enlaces de la barra flotante */
-.navbar-flotante a:active {
-    transform: scale(0.92); /* Pequeño efecto de pulsación/presión al hacer clic */
-    transition: transform 0.1s ease;
-}
-
-/* 3. Transición suave al pasar el mouse por encima */
-.navbar-flotante a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: background-color 0.25s ease, transform 0.15s ease, color 0.25s ease;
 }
