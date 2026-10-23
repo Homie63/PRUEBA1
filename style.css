@@ -213,12 +213,22 @@ body {
     position: relative;
 }
 
-.contenedor-video-vertical video,
-.contenedor-video-vertical iframe {
+.contenedor-video-vertical video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.contenedor-video-vertical iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    
+    /* MODIFICA ESTOS VALORES A TU GUSTO: */
+    transform: translate(0px, -21px) scale(0.999);
+    transform-origin: center;
 }
 
 .info-trabajo {
