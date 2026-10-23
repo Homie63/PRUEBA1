@@ -220,15 +220,43 @@ body {
     display: block;
 }
 
+/* Configuración base compartida para los iframes */
 .contenedor-video-vertical iframe {
     width: 100%;
     height: 100%;
     border: none;
     display: block;
-    
-    /* MODIFICA ESTOS VALORES A TU GUSTO: */
-    transform: translate(0px, -21px) scale(0.999);
     transform-origin: center;
+}
+
+/* 🎥 VIDEO 1: Mueve y escala SOLO el primer video */
+.video-personalizado-1 {
+    transform: translate(0px, 0px) scale(1.00); 
+}
+
+/* 🎥 VIDEO 2: Mueve y escala SOLO el segundo video (ajústalo a tu gusto) */
+.video-personalizado-2 {
+    transform: translate(0px, 0px) scale(1.00); 
+}
+
+/* 🎥 VIDEO 3: Ajustes individuales para el nuevo video */
+.video-personalizado-3 {
+    transform: translate(0px, 0px) scale(1.0); 
+}
+
+/* 🎥 VIDEO 4: Ajustes individuales para el nuevo video */
+.video-personalizado-3 {
+    transform: translate(0px, 0px) scale(1.0); 
+}
+
+/* 🎥 VIDEO 5: Ajustes individuales para el nuevo video */
+.video-personalizado-3 {
+    transform: translate(0px, 0px) scale(1.0); 
+}
+
+/* 🎥 VIDEO 6: Ajustes individuales para el nuevo video */
+.video-personalizado-3 {
+    transform: translate(0px, 0px) scale(1.0); 
 }
 
 .info-trabajo {
