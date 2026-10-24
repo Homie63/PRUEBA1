@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Editor de Video</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
+    <!-- NAVBAR FLOTANTE -->
     <nav class="navbar-flotante" id="navbar-menu">
-        <!-- Pastilla deslizante de cristal líquido -->
+        <!-- 💧 Esta línea es obligatoria para que exista la pastilla -->
         <div class="nav-indicator"></div>
-
-        <!-- Tus enlaces -->
-        <a href="#inicio" class="active">Inicio</a>
-        <a href="#trabajos">Trabajos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#Cotización">Cotización</a>
+        <a href="#inicio" class="nav-inicio">Inicio</a>
+        <a href="#trabajos" class="nav-trabajos">Trabajos</a>
+        <a href="#sobre-mi" class="nav-sobre">Sobre mí</a>
+        <a href="cotizacion.html" class="nav-cotizacion">Cotización</a>
         <a href="#contacto" class="btn-destacado">Contacto</a>
     </nav>
 
     <!-- SECCIÓN 1: INICIO (Video Presentación Principal) -->
     <section id="inicio" class="hero-section">
         <div class="contenedor-video-hero">
-            <!-- 
-                autoplay: se reproduce solo
-                muted: obligatorio para que el navegador permita autoplay
-                loop: se repite en bucle
-                playsinline: evita pantalla completa forzada en móviles
-            -->
             <video autoplay muted loop playsinline id="video-presentacion">
                 <source src="tu-video-presentacion.mp4" type="video/mp4">
                 Tu navegador no soporta video HTML5.
@@ -38,7 +28,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 2: PRESENTACIÓN (Al bajar con scroll) -->
+    <!-- SECCIÓN 2: PRESENTACIÓN (Sobre mí) -->
     <section id="sobre-mi" class="seccion-presentacion">
         <div class="contenedor-presentacion">
             <div class="info-presentacion">
@@ -49,7 +39,6 @@
                     ritmo, narrativa visual y optimización para plataformas digitales. Mi enfoque combina creatividad y
                     estrategia para desarrollar piezas audiovisuales de alto impacto.
                 </p>
-
                 <!-- Tags de Habilidades -->
                 <div class="tags-habilidades">
                     <span>Edición de Video</span>
@@ -59,7 +48,6 @@
                     <span>Contenido Digital</span>
                 </div>
             </div>
-
             <!-- Foto de perfil circular -->
             <div class="foto-presentacion">
                 <img src="perfil.jpeg" alt="Foto de perfil">
@@ -71,7 +59,6 @@
     <section id="trabajos" class="seccion-trabajos">
         <div class="contenedor-trabajos">
             <h2 class="titulo-seccion">Mis trabajos</h2>
-
             <div class="grid-trabajos">
                 <!-- Tarjeta 1 -->
                 <div class="tarjeta-trabajo">
@@ -88,7 +75,6 @@
                         <span class="meta-trabajo">Vertical · After Effects / Premiere</span>
                     </div>
                 </div>
-
                 <!-- Tarjeta 2 -->
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
@@ -104,11 +90,9 @@
                         <span class="meta-trabajo">Vertical · 9:16</span>
                     </div>
                 </div>
-
                 <!-- Tarjeta 3 -->
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
-                        <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
                         <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/JjWMchk6sUo"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -121,12 +105,10 @@
                         <span class="meta-trabajo">Vertical · Herramientas</span>
                     </div>
                 </div>
-
-                <!-- Tarjeta Nueva 4 -->
+                <!-- Tarjeta 4 -->
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
-                        <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/h53mUi7ZKnk"
+                        <iframe class="video-personalizado-4" src="https://www.youtube.com/embed/h53mUi7ZKnk"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -138,12 +120,10 @@
                         <span class="meta-trabajo">Vertical · Herramientas</span>
                     </div>
                 </div>
-
-                <!-- Tarjeta Nueva 5 -->
+                <!-- Tarjeta 5 -->
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
-                        <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/orJ5b7p9y20"
+                        <iframe class="video-personalizado-5" src="https://www.youtube.com/embed/jmb8UDlhyaw"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -155,12 +135,10 @@
                         <span class="meta-trabajo">Vertical · Herramientas</span>
                     </div>
                 </div>
-
-                <!-- Tarjeta Nueva 6 -->
+                <!-- Tarjeta 6 -->
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
-                        <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/mo5VmzDrU-Y"
+                        <iframe class="video-personalizado-6" src="https://www.youtube.com/embed/mo5VmzDrU-Y"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -176,37 +154,33 @@
         </div>
     </section>
 
-    <!-- Script para el movimiento fluido del cristal líquido -->
+    <!-- SCRIPT JS ÚNICO Y CORREGIDO -->
     <script>
-    const navbar = document.getElementById('navbar-menu');
-    const indicator = navbar.querySelector('.nav-indicator');
-    
-    // Seleccionamos SOLO los enlaces que NO tengan la clase .btn-destacado
-    const links = navbar.querySelectorAll('a:not(.btn-destacado)');
+        const navbar = document.getElementById('navbar-menu');
+        const indicator = navbar.querySelector('.nav-indicator');
+        const links = navbar.querySelectorAll('a:not(.btn-destacado)');
 
-    function moveIndicator(element) {
-        indicator.style.opacity = '1';
-        indicator.style.transform = 'scale(1)';
-        indicator.style.left = element.offsetLeft + 'px';
-        indicator.style.width = element.offsetWidth + 'px';
-    }
+        function moveIndicator(element) {
+            const navRect = navbar.getBoundingClientRect();
+            const linkRect = element.getBoundingClientRect();
+            const leftPos = linkRect.left - navRect.left;
 
-    // Escucha el movimiento solo en las opciones permitidas
-    links.forEach(link => {
-        link.addEventListener('mouseenter', (e) => {
-            moveIndicator(e.target);
+            indicator.style.opacity = '1';
+            indicator.style.transform = 'scale(1)';
+            indicator.style.left = leftPos + 'px';
+            indicator.style.width = linkRect.width + 'px';
+        }
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                moveIndicator(e.target);
+            });
         });
-    });
 
-    // Cuando el cursor sale de toda la barra, la pastilla se desvanece
-    navbar.addEventListener('mouseleave', () => {
-        indicator.style.opacity = '0';
-        indicator.style.transform = 'scale(0.92)';
-    });
-</script>
+        navbar.addEventListener('mouseleave', () => {
+            indicator.style.opacity = '0';
+            indicator.style.transform = 'scale(0.92)';
+        });
+    </script>
 </body>
-
-</html>
-</body>
-
 </html>

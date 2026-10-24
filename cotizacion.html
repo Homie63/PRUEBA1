@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización - Editor de Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR FLOTANTE IDÉNTICO AL PRINCIPAL -->
+    <nav class="navbar-flotante" id="navbar-menu">
+        <div class="nav-indicator"></div>
+        <a href="index.html#inicio" class="nav-inicio">Inicio</a>
+        <a href="index.html#trabajos" class="nav-trabajos">Trabajos</a>
+        <a href="index.html#sobre-mi" class="nav-sobre">Sobre mí</a>
+        <a href="cotizacion.html" class="nav-cotizacion">Cotización</a>
+        <a href="index.html#contacto" class="btn-destacado">Contacto</a>
+    </nav>
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <section class="encabezado-cotizador">
+        <span class="subtitulo-categoria">PRESUPUESTO Y TARIFAS</span>
+        <h1 class="titulo-presentacion" style="color: #ffffff; margin-top: 10px;">Calcula tu proyecto audiovisual</h1>
+        <p class="texto-presentacion" style="color: #aaa; max-width: 600px; margin: 0 auto;">
+            Selecciona el paquete que mejor se adapte a tus necesidades o solicita una propuesta personalizada.
+        </p>
+    </section>
+
+    <!-- CONTENEDOR DEL COTIZADOR INTERACTIVO -->
+    <section class="contenedor-cotizador">
+        
+        <!-- Pestañas Formato: Vertical / Horizontal -->
+        <div class="cotizador-formato-tabs">
+            <button class="tab-formato activo" data-formato="vertical">
+                <span class="ico-formato">9:16</span>
+                <div class="info-tab">
+                    <strong>VERTICAL</strong>
+                    <small>Precio por pieza</small>
+                </div>
+            </button>
+            <button class="tab-formato" data-formato="horizontal">
+                <span class="ico-formato">16:9</span>
+                <div class="info-tab">
+                    <strong>HORIZONTAL</strong>
+                    <small>Precio por duración</small>
+                </div>
+            </button>
+        </div>
+
+        <!-- GRID PRINCIPAL (Planes + Controles a la izq / Card de Totales a la der) -->
+        <div class="cotizador-grid">
+            
+            <div class="cotizador-panel-izq">
+                <!-- Planes de Edición -->
+                <div class="planes-grid">
+                    
+                    <div class="card-plan activo" data-plan="basica" data-precio="17">
+                        <div class="plan-header">
+                            <span class="badge-plan">EDICIÓN LIMPIA</span>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <h3>BÁSICA</h3>
+                        <div class="precio-plan">$<span class="val-p">17</span> <small>/ pieza</small></div>
+                        <ul class="lista-features">
+                            <li>Recortes precisos</li>
+                            <li>Zooms funcionales</li>
+                            <li>Subtítulos</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-plan" data-plan="intermedia" data-precio="25">
+                        <div class="plan-header">
+                            <span class="badge-plan">RITMO Y RETENCIÓN</span>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <h3>INTERMEDIA</h3>
+                        <div class="precio-plan">$<span class="val-p">25</span> <small>/ pieza</small></div>
+                        <ul class="lista-features">
+                            <li>Todo lo anterior</li>
+                            <li>Efectos visuales</li>
+                            <li>Diseño sonoro</li>
+                        </ul>
+                    </div>
+
+                    <div class="card-plan" data-plan="compleja" data-precio="60">
+                        <div class="plan-header">
+                            <span class="badge-plan">ACABADO PREMIUM</span>
+                            <span class="check-icon">✓</span>
+                        </div>
+                        <h3>COMPLEJA</h3>
+                        <div class="precio-plan">$<span class="val-p">60</span> <small>/ pieza</small></div>
+                        <ul class="lista-features">
+                            <li>Gráficos animados</li>
+                            <li>Rotoscopia y color</li>
+                            <li>Recursos 3D</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Selector de Cantidad (Slider) -->
+                <div class="box-control-cantidad">
+                    <div class="cant-header">
+                        <label for="range-videos">Cantidad de piezas</label>
+                        <span id="cant-display">1 video</span>
+                    </div>
+                    <input type="range" id="range-videos" min="1" max="10" value="1" step="1">
+                    <div class="range-labels">
+                        <span>1 PIEZA</span>
+                        <span>10 PIEZAS</span>
+                    </div>
+                </div>
+
+                <!-- Option Checkbox (Entrega Prioritaria) -->
+                <div class="box-addon">
+                    <label class="addon-label">
+                        <input type="checkbox" id="check-prioritaria">
+                        <span class="custom-checkbox"></span>
+                        <div class="addon-info">
+                            <strong>⚡ Entrega prioritaria</strong>
+                            <p>Reserva de agenda y respuesta acelerada</p>
+                        </div>
+                        <span class="addon-precio">+30%</span>
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Panel Derecho: Resumen y Precio Final -->
+            <div class="cotizador-panel-der">
+                <div class="card-total-azul">
+                    <span class="sub-estimado">ESTIMADO DESDE</span>
+                    <div class="monto-total">$<span id="total-monto">17</span></div>
+                    <span class="moneda-label">USD</span>
+
+                    <ul class="lista-garantias">
+                        <li>✓ Una ronda de ajustes</li>
+                        <li>✓ Exportación final</li>
+                    </ul>
+
+                    <a href="#" id="btn-whatsapp-cotiza" target="_blank" class="btn-consultar-disp">
+                        Consultar disponibilidad ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPT DE NAVEGACIÓN Y CÁLCULO -->
+    <script>
+        // 1. Navbar Animación Flotante
+        const navbar = document.getElementById('navbar-menu');
+        const indicator = navbar.querySelector('.nav-indicator');
+        const links = navbar.querySelectorAll('a:not(.btn-destacado)');
+
+        function moveIndicator(element) {
+            const navRect = navbar.getBoundingClientRect();
+            const linkRect = element.getBoundingClientRect();
+            const leftPos = linkRect.left - navRect.left;
+
+            indicator.style.opacity = '1';
+            indicator.style.transform = 'scale(1)';
+            indicator.style.left = leftPos + 'px';
+            indicator.style.width = linkRect.width + 'px';
+        }
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', (e) => {
+                moveIndicator(e.target);
+            });
+        });
+
+        navbar.addEventListener('mouseleave', () => {
+            indicator.style.opacity = '0';
+            indicator.style.transform = 'scale(0.92)';
+        });
+
+        // 2. Lógica del Cotizador Dinámico
+        const preciosBase = {
+            vertical: { basica: 17, intermedia: 25, compleja: 60 },
+            horizontal: { basica: 35, intermedia: 55, compleja: 110 }
+        };
+
+        let estado = {
+            formato: 'vertical',
+            plan: 'basica',
+            cantidad: 1,
+            prioritaria: false
+        };
+
+        const tabsFormato = document.querySelectorAll('.tab-formato');
+        const cardsPlan = document.querySelectorAll('.card-plan');
+        const rangeVideos = document.getElementById('range-videos');
+        const cantDisplay = document.getElementById('cant-display');
+        const checkPrioritaria = document.getElementById('check-prioritaria');
+        const totalMonto = document.getElementById('total-monto');
+        const btnWhatsapp = document.getElementById('btn-whatsapp-cotiza');
+
+        function actualizarPreciosUI() {
+            // Actualizar precios visibles en las cards según formato elegido
+            cardsPlan.forEach(card => {
+                const planKey = card.getAttribute('data-plan');
+                const nuevoPrecio = preciosBase[estado.formato][planKey];
+                card.setAttribute('data-precio', nuevoPrecio);
+                card.querySelector('.val-p').textContent = nuevoPrecio;
+            });
+
+            // Calcular Total
+            const precioUnitario = preciosBase[estado.formato][estado.plan];
+            let subtotal = precioUnitario * estado.cantidad;
+
+            if (estado.prioritaria) {
+                subtotal *= 1.30; // +30%
+            }
+
+            const totalFinal = Math.round(subtotal);
+            totalMonto.textContent = totalFinal;
+
+            // Actualizar link de WhatsApp con mensaje personalizado
+            const numTelefono = "51900000000"; // Reemplaza por tu número de WhatsApp
+            const msj = encodeURIComponent(
+                `¡Hola! Quisiera cotizar un proyecto audiovisual:\n` +
+                `- Formato: ${estado.formato.toUpperCase()}\n` +
+                `- Plan: ${estado.plan.toUpperCase()}\n` +
+                `- Cantidad: ${estado.cantidad} video(s)\n` +
+                `- Entrega prioritaria: ${estado.prioritaria ? 'Sí' : 'No'}\n` +
+                `- Estimado: $${totalFinal} USD`
+            );
+            btnWhatsapp.href = `https://wa.me/${numTelefono}?text=${msj}`;
+        }
+
+        // Eventos Formato (Tabs)
+        tabsFormato.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabsFormato.forEach(t => t.classList.remove('activo'));
+                tab.classList.add('activo');
+                estado.formato = tab.getAttribute('data-formato');
+                actualizarPreciosUI();
+            });
+        });
+
+        // Eventos Plan
+        cardsPlan.forEach(card => {
+            card.addEventListener('click', () => {
+                cardsPlan.forEach(c => c.classList.remove('activo'));
+                card.classList.add('activo');
+                estado.plan = card.getAttribute('data-plan');
+                actualizarPreciosUI();
+            });
+        });
+
+        // Evento Cantidad (Slider)
+        rangeVideos.addEventListener('input', (e) => {
+            estado.cantidad = parseInt(e.target.value);
+            cantDisplay.textContent = `${estado.cantidad} ${estado.cantidad === 1 ? 'video' : 'videos'}`;
+            actualizarPreciosUI();
+        });
+
+        // Evento Prioritaria (Checkbox)
+        checkPrioritaria.addEventListener('change', (e) => {
+            estado.prioritaria = e.target.checked;
+            actualizarPreciosUI();
+        });
+
+        // Inicializar
+        actualizarPreciosUI();
+    </script>
+</body>
+</html>
