@@ -11,48 +11,94 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar Flotante */
+/* ================= NAVBAR FLOTANTE ================= */
 .navbar-flotante {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 6px;
     border-radius: 40px;
     display: flex;
-    gap: 15px;
+    gap: 5px;
     align-items: center;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+/* Enlaces del menú */
 .navbar-flotante a {
     text-decoration: none;
     color: #333333;
     font-size: 14px;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 8px 18px;
     border-radius: 20px;
-    transition: background-color 0.25s ease, transform 0.15s ease, color 0.25s ease;
+    position: relative;
+    z-index: 2;
+    /* Transición suave de color y zoom con curva fluida estilo Apple */
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efecto de zoom-in sutil y cambio de color al pasar el mouse */
+.navbar-flotante a:not(.btn-destacado):hover {
+    transform: scale(1.08); /* Aumenta ligeramente de tamaño con animación */
+    color: #ff0000; /* Color naranja (puedes cambiar este código hexadecimal cuando quieras) */
+}
+
+.navbar-flotante a:hover {
+    color: #007ae6;
 }
 
 .navbar-flotante a:active {
+    transform: scale(0.95);
+}
+
+/* 💧 Pastilla de Cristal Líquido (Estilo Apple con desvanecimiento y zoom-in) */
+.nav-indicator {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 0;
+    width: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    z-index: 1;
+
+    /* Estado inicial: oculto y ligeramente contraído para el zoom-in */
+    opacity: 0;
     transform: scale(0.92);
-    transition: transform 0.1s ease;
+    transform-origin: center;
+
+    /* Transición fluida para movimiento, tamaño, desvanecimiento y zoom */
+    transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+        opacity 0.25s ease,
+        transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
 }
 
-.navbar-flotante a.active, .navbar-flotante a:hover {
-    background-color: #e8ecef;
-}
-
+/* Botón destacado (Contacto / Ver más) */
 .navbar-flotante a.btn-destacado {
-    background-color: #007ae6;
+    background-color: #00e67b;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 122, 230, 0.3);
+}
+
+.navbar-flotante a.btn-destacado:hover {
     color: white;
 }
 
-/* SECCIÓN 1: HERO (VIDEO PRESENTACIÓN) */
+
+/* ================= SECCIÓN 1: HERO (VIDEO PRESENTACIÓN) ================= */
 .hero-section {
     width: 100%;
     min-height: 100vh;
@@ -90,7 +136,8 @@ body {
     }
 }
 
-/* SECCIÓN 2: PRESENTACIÓN (FONDO BLANCO) */
+
+/* ================= SECCIÓN 2: PRESENTACIÓN ================= */
 .seccion-presentacion {
     background-color: #ffffff;
     color: #111111;
@@ -162,7 +209,8 @@ body {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* SECCIÓN 3: MIS TRABAJOS */
+
+/* ================= SECCIÓN 3: MIS TRABAJOS ================= */
 .seccion-trabajos {
     background-color: #ffffff;
     padding: 60px 8% 120px 8%;
@@ -229,34 +277,29 @@ body {
     transform-origin: center;
 }
 
-/* 🎥 VIDEO 1: Mueve y escala SOLO el primer video */
+/* 🎥 VIDEOS PERSONALIZADOS (Ajustes independientes) */
 .video-personalizado-1 {
-    transform: translate(0px, 0px) scale(1.00); 
+    transform: translate(0px, 0px) scale(1.00);
 }
 
-/* 🎥 VIDEO 2: Mueve y escala SOLO el segundo video (ajústalo a tu gusto) */
 .video-personalizado-2 {
-    transform: translate(0px, 0px) scale(1.00); 
+    transform: translate(0px, 0px) scale(1.00);
 }
 
-/* 🎥 VIDEO 3: Ajustes individuales para el nuevo video */
 .video-personalizado-3 {
-    transform: translate(0px, 0px) scale(1.0); 
+    transform: translate(0px, 0px) scale(1.0);
 }
 
-/* 🎥 VIDEO 4: Ajustes individuales para el nuevo video */
-.video-personalizado-3 {
-    transform: translate(0px, 0px) scale(1.0); 
+.video-personalizado-4 {
+    transform: translate(0px, 0px) scale(1.0);
 }
 
-/* 🎥 VIDEO 5: Ajustes individuales para el nuevo video */
-.video-personalizado-3 {
-    transform: translate(0px, 0px) scale(1.0); 
+.video-personalizado-5 {
+    transform: translate(0px, 0px) scale(1.0);
 }
 
-/* 🎥 VIDEO 6: Ajustes individuales para el nuevo video */
-.video-personalizado-3 {
-    transform: translate(0px, 0px) scale(1.0); 
+.video-personalizado-6 {
+    transform: translate(0px, 0px) scale(1.0);
 }
 
 .info-trabajo {
@@ -298,13 +341,13 @@ body {
     padding-top: 12px;
 }
 
-/* Desplazamiento Suave General */
+
+/* ================= MEDIA QUERIES / RESPONSIVO ================= */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
 }
 
-/* Responsivo General */
 @media (max-width: 992px) {
     .grid-trabajos {
         grid-template-columns: repeat(2, 1fr);
@@ -316,12 +359,15 @@ html {
         flex-direction: column-reverse;
         text-align: center;
     }
+
     .info-presentacion {
         text-align: center;
     }
+
     .titulo-presentacion {
         font-size: 2.2rem;
     }
+
     .tags-habilidades {
         justify-content: center;
     }
@@ -331,6 +377,7 @@ html {
     .grid-trabajos {
         grid-template-columns: 1fr;
     }
+
     .titulo-seccion {
         font-size: 2.2rem;
     }

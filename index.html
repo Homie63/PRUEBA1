@@ -10,12 +10,15 @@
 
 <body>
 
-    <!-- Menú flotante estilo cápsula -->
-    <nav class="navbar-flotante">
+    <nav class="navbar-flotante" id="navbar-menu">
+        <!-- Pastilla deslizante de cristal líquido -->
+        <div class="nav-indicator"></div>
+
+        <!-- Tus enlaces -->
         <a href="#inicio" class="active">Inicio</a>
+        <a href="#trabajos">Trabajos</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#trabajos">Mis trabajos</a>
-        <a href="#cotización">Cotización</a>
+        <a href="#Cotización">Cotización</a>
         <a href="#contacto" class="btn-destacado">Contacto</a>
     </nav>
 
@@ -123,8 +126,8 @@
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
                         <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3"
-                            src="https://www.youtube.com/embed/h53mUi7ZKnk" frameborder="0"
+                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/h53mUi7ZKnk"
+                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -140,8 +143,8 @@
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
                         <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3"
-                            src="https://www.youtube.com/embed/orJ5b7p9y20" frameborder="0"
+                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/orJ5b7p9y20"
+                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -157,8 +160,8 @@
                 <div class="tarjeta-trabajo">
                     <div class="contenedor-video-vertical">
                         <!-- Recuerda cambiar la clase a video-personalizado-3 y poner tu ID de YouTube -->
-                        <iframe class="video-personalizado-3"
-                            src="https://www.youtube.com/embed/mo5VmzDrU-Y" frameborder="0"
+                        <iframe class="video-personalizado-3" src="https://www.youtube.com/embed/mo5VmzDrU-Y"
+                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -173,6 +176,37 @@
         </div>
     </section>
 
+    <!-- Script para el movimiento fluido del cristal líquido -->
+    <script>
+    const navbar = document.getElementById('navbar-menu');
+    const indicator = navbar.querySelector('.nav-indicator');
+    
+    // Seleccionamos SOLO los enlaces que NO tengan la clase .btn-destacado
+    const links = navbar.querySelectorAll('a:not(.btn-destacado)');
+
+    function moveIndicator(element) {
+        indicator.style.opacity = '1';
+        indicator.style.transform = 'scale(1)';
+        indicator.style.left = element.offsetLeft + 'px';
+        indicator.style.width = element.offsetWidth + 'px';
+    }
+
+    // Escucha el movimiento solo en las opciones permitidas
+    links.forEach(link => {
+        link.addEventListener('mouseenter', (e) => {
+            moveIndicator(e.target);
+        });
+    });
+
+    // Cuando el cursor sale de toda la barra, la pastilla se desvanece
+    navbar.addEventListener('mouseleave', () => {
+        indicator.style.opacity = '0';
+        indicator.style.transform = 'scale(0.92)';
+    });
+</script>
+</body>
+
+</html>
 </body>
 
 </html>
