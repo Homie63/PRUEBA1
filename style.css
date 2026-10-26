@@ -881,3 +881,173 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================= HERRAMIENTAS MINIMALISTAS ================= */
+
+.herramientas-minimalistas {
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08); /* O rgba(255, 255, 255, 0.1) si el fondo es oscuro */
+}
+
+.subtitulo-herramientas-inline {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #007ae6;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.lista-herramientas-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.item-herramienta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: default;
+}
+
+.item-herramienta:hover {
+    transform: translateY(-4px);
+}
+
+.ico-software {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg-logo {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.item-herramienta:hover .svg-logo {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+
+.item-herramienta span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #444444;
+    letter-spacing: 0.2px;
+}
+
+.img-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.item-herramienta:hover .img-logo {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+
+/* Contenedor de cada ícono */
+.ico-software {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Imagen base */
+.img-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Escala ajustada para Figma para compensar los bordes transparentes del PNG */
+.img-logo.img-figma {
+    transform: scale(1.22);
+}
+
+.item-herramienta:hover .img-logo {
+    transform: scale(1.08);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+
+.item-herramienta:hover .img-logo.img-figma {
+    transform: scale(1.32);
+}
+
+/* ================= AJUSTE DE TAMAÑO DE ÍCONOS PNG ================= */
+
+/* Contenedor base de los íconos */
+.ico-software {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Propiedades comunes para las imágenes */
+.img-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+}
+
+/* ESCALA INDIVIDUAL (Aumenta los PNGs pequeños con margen transparente) */
+.img-logo.img-pr {
+    transform: scale(1);
+}
+
+.img-logo.img-ae {
+    transform: scale(1.35); /* Agranda After Effects */
+}
+
+.img-logo.img-ai {
+    transform: scale(1);
+}
+
+.img-logo.img-figma {
+    transform: scale(1.30); /* Agranda Figma */
+}
+
+/* ANIMACIÓN AL PASAR EL CURSOR (HOVER) */
+.item-herramienta:hover .img-logo.img-pr {
+    transform: scale(1.10);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
+
+.item-herramienta:hover .img-logo.img-ae {
+    transform: scale(1.45);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
+
+.item-herramienta:hover .img-logo.img-ai {
+    transform: scale(1.10);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
+
+.item-herramienta:hover .img-logo.img-figma {
+    transform: scale(1.40);
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+}
